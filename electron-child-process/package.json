@@ -1,0 +1,23 @@
+{
+  "dependencies": {
+    "electron": "^4.1.4"
+  },
+  "scripts": {
+    "start": "electron .",
+    "build:darwin": "electron-packager . --out=build --asar --overwirte --platform=darwin",
+    "build:darwin:32": "electron-packager . --out=build --asar --overwirte --platform=darwin --arch=ia32",
+    "build:win": "electron-packager . --out=build --asar --overwirte --platform=win32",  
+    "build:win:32": "electron-packager . --out=build --asar --overwirte --platform=win32 --arch=ia32",
+    "build:linux": "electron-packager . --out=build --asar --overwirte --platform=linux",
+    "build:linux:32": "electron-packager . --out=build --asar --overwirte --platform=linux --arch=ia32",
+    "build": "electron-packager . --out=build --asar --overwirte --all"
+  },
+  "name": "electron-childp",
+  "version": "0.0.1",
+  "description": "execute a child process in electron",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "electron-packager": "^13.1.1"
+  }
+}

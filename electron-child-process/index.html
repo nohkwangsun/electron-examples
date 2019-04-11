@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Hello Electron</h1>
+    <button onclick="runexecb()">뒤에서 실행</button>
+    <textarea id="console">N/A</textarea>
+</body>
+<script>
+    const electron = require('electron');
+    const {ipcRenderer} = electron;
+    function runexecb() {
+        alert("ready to start b")
+        ipcRenderer.send('action:run');
+    }
+    
+    ipcRenderer.on('action:run', function(e, data) {
+        var r = document.querySelector("#console")
+        r.value += data
+    });
+</script>
+</html>
